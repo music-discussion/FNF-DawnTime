@@ -1,0 +1,13 @@
+{
+    "character": "tankman",
+
+    "title": "Tankman",
+    "description": "You somehow end up on the battlefield next to Tankman.",
+    "weekFileName": "week7",
+    "hexcode": "0xff3a3636",
+    "xAdd": 150,
+    "yAdd": -25,
+    "scaleX": 1,
+    "scaleY": 1,
+    "locked": false
+}

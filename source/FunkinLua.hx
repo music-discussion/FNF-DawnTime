@@ -159,7 +159,7 @@ class FunkinLua {
 		set('rating', 0);
 		set('ratingName', '');
 		set('ratingFC', '');
-		set('version', MainMenuState.psychEngineVersion.trim());
+		set('version', DesktopState.psychEngineVersion.trim());
 
 		set('inGameOver', false);
 		set('mustHitSection', false);
@@ -2269,6 +2269,9 @@ class FunkinLua {
 				return PlayState.instance.modchartSounds.get(tag).time;
 			}
 			return 0;
+		});
+		Lua_helper.add_callback(lua, "addAfterStart", function() {
+
 		});
 		Lua_helper.add_callback(lua, "setSoundTime", function(tag:String, value:Float) {
 			if(tag != null && tag.length > 0 && PlayState.instance.modchartSounds.exists(tag)) {

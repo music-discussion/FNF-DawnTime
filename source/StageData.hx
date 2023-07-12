@@ -20,6 +20,8 @@ typedef StageFile = {
 	var boyfriend:Array<Dynamic>;
 	var girlfriend:Array<Dynamic>;
 	var opponent:Array<Dynamic>;
+	var opponent2:Array<Dynamic>;
+	var opponent3:Array<Dynamic>;
 	var hide_girlfriend:Bool;
 
 	var camera_boyfriend:Array<Float>;

@@ -152,6 +152,8 @@ class Note extends FlxSprite
 					noMissAnimation = true;
 				case 'GF Sing':
 					gfNote = true;
+				case 'Opponent 2':
+				case 'Opponent 3':
 			}
 			noteType = value;
 		}

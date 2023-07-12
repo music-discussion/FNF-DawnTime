@@ -23,7 +23,7 @@ import flixel.input.keyboard.FlxKey;
 
 using StringTools;
 
-class MainMenuState extends MusicBeatState
+class MainMenuState extends MusicBeatState // left in for compatability
 {
 	public static var psychEngineVersion:String = '0.7b'; //This is also used for Discord RPC
 	public static var dawnTimeModVersion:String = '1.0.0a';
@@ -96,6 +96,7 @@ class MainMenuState extends MusicBeatState
 		magenta.visible = false;
 		magenta.antialiasing = ClientPrefs.globalAntialiasing;
 		magenta.color = 0xFFfd719b;
+		magenta.color = 0xffdb110a;
 		add(magenta);
 		
 		// magenta.scrollFactor.set();
@@ -180,7 +181,7 @@ class MainMenuState extends MusicBeatState
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
-			if(FreeplayState.vocals != null) FreeplayState.vocals.volume += 0.5 * elapsed;
+			if(PrivateFreeplayState.vocals != null) PrivateFreeplayState.vocals.volume += 0.5 * elapsed;
 		}
 
 		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);

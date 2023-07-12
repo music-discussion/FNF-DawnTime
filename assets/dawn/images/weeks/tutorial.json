@@ -1,0 +1,13 @@
+{
+    "character": "gf",
+
+    "title": "Tutorial",
+    "description": "The tutorial, the place we all remember starting out.",
+    "weekFileName": "tutorial",
+    "hexcode": "0xfff15757",
+    "xAdd": 0,
+    "yAdd": -50,
+    "scaleX": 1,
+    "scaleY": 1,
+    "locked": false
+}

@@ -67,7 +67,9 @@ class ChartingState extends MusicBeatState
 		'Hey!',
 		'Hurt Note',
 		'GF Sing',
-		'No Animation'
+		'No Animation',
+		'Opponent 2',
+		'Opponent 3'
 	];
 	private var noteTypeIntMap:Map<Int, String> = new Map<Int, String>();
 	private var noteTypeMap:Map<String, Null<Int>> = new Map<String, Null<Int>>();
@@ -223,7 +225,10 @@ class ChartingState extends MusicBeatState
 				gfVersion: 'gf',
 				speed: 1,
 				stage: 'stage',
-				validScore: false
+				validScore: false,
+				opponentCount: "1",
+				dad2: "dad",
+				dad3: "dad"
 			};
 			addSection();
 			PlayState.SONG = _song;
@@ -592,6 +597,29 @@ class ChartingState extends MusicBeatState
 		stageDropDown.selectedLabel = _song.stage;
 		blockPressWhileScrolling.push(stageDropDown);
 
+		var counts:Array<String> = ["1", "2", "3"];
+
+		var opponentCountDropDown:FlxUIDropDownMenuCustom = new FlxUIDropDownMenuCustom(stageDropDown.x, stageDropDown.y + 40, FlxUIDropDownMenuCustom.makeStrIdLabelArray(counts, true), function(opponentCount:String)
+		{
+			_song.opponentCount = counts[Std.parseInt(opponentCount)];
+		});
+		opponentCountDropDown.selectedLabel = _song.opponentCount;
+		blockPressWhileScrolling.push(opponentCountDropDown);
+
+		var dad2Dropdown = new FlxUIDropDownMenuCustom(opponentCountDropDown.x, opponentCountDropDown.y + 45, FlxUIDropDownMenuCustom.makeStrIdLabelArray(characters, true), function(character:String)
+		{
+			_song.dad2 = characters[Std.parseInt(character)];
+		});
+		dad2Dropdown.selectedLabel = _song.dad2;
+		blockPressWhileScrolling.push(dad2Dropdown);
+
+		var dad3Dropdown = new FlxUIDropDownMenuCustom(dad2Dropdown.x, dad2Dropdown.y + 45, FlxUIDropDownMenuCustom.makeStrIdLabelArray(characters, true), function(character:String)
+		{
+			_song.dad3 = characters[Std.parseInt(character)];
+		});
+		dad3Dropdown.selectedLabel = _song.dad3;
+		blockPressWhileScrolling.push(dad3Dropdown);
+
 		var skin = PlayState.SONG.arrowSkin;
 		if(skin == null) skin = '';
 		noteSkinInputText = new FlxUIInputText(player2DropDown.x, player2DropDown.y + 50, 150, skin, 8);
@@ -630,12 +658,18 @@ class ChartingState extends MusicBeatState
 		tab_group_song.add(new FlxText(gfVersionDropDown.x, gfVersionDropDown.y - 15, 0, 'Girlfriend:'));
 		tab_group_song.add(new FlxText(player1DropDown.x, player1DropDown.y - 15, 0, 'Boyfriend:'));
 		tab_group_song.add(new FlxText(stageDropDown.x, stageDropDown.y - 15, 0, 'Stage:'));
+		tab_group_song.add(new FlxText(opponentCountDropDown.x, opponentCountDropDown.y - 15, 0, 'Opponent Count:'));
+		tab_group_song.add(new FlxText(dad2Dropdown.x, dad2Dropdown.y - 15, 0, 'Dad 2:'));
+		tab_group_song.add(new FlxText(dad3Dropdown.x, dad3Dropdown.y - 15, 0, 'Dad 3:'));
 		tab_group_song.add(new FlxText(noteSkinInputText.x, noteSkinInputText.y - 15, 0, 'Note Texture:'));
 		tab_group_song.add(new FlxText(noteSplashesInputText.x, noteSplashesInputText.y - 15, 0, 'Note Splashes Texture:'));
 		tab_group_song.add(player2DropDown);
 		tab_group_song.add(gfVersionDropDown);
 		tab_group_song.add(player1DropDown);
 		tab_group_song.add(stageDropDown);
+		tab_group_song.add(opponentCountDropDown);
+		tab_group_song.add(dad2Dropdown);
+		tab_group_song.add(dad3Dropdown);
 
 		UI_box.addGroup(tab_group_song);
 

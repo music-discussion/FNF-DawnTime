@@ -62,6 +62,7 @@ class Character extends FlxSprite
 	public var idleSuffix:String = '';
 	public var danceIdle:Bool = false; //Character use "danceLeft" and "danceRight" instead of "idle"
 	public var skipDance:Bool = false;
+	public var forceLoop:Bool = false;
 
 	public var healthIcon:String = 'face';
 	public var animationsArray:Array<AnimArray> = [];
@@ -79,9 +80,11 @@ class Character extends FlxSprite
 	public var healthColorArray:Array<Int> = [255, 0, 0];
 
 	public static var DEFAULT_CHARACTER:String = 'bf'; //In case a character is missing, it will use BF on its place
-	public function new(x:Float, y:Float, ?character:String = 'bf', ?isPlayer:Bool = false)
+	public function new(x:Float, y:Float, ?character:String = 'bf', ?isPlayer:Bool = false, ?forceLoop:Bool = false)
 	{
 		super(x, y);
+
+		this.forceLoop = forceLoop;
 
 		#if (haxe >= "4.0.0")
 		animOffsets = new Map();
@@ -200,8 +203,10 @@ class Character extends FlxSprite
 						var animLoop:Bool = !!anim.loop; //Bruh
 						var animIndices:Array<Int> = anim.indices;
 						if(animIndices != null && animIndices.length > 0) {
+							if (this.forceLoop) animLoop = true;
 							animation.addByIndices(animAnim, animName, animIndices, "", animFps, animLoop);
 						} else {
+							if (this.forceLoop) animLoop = true;
 							animation.addByPrefix(animAnim, animName, animFps, animLoop);
 						}
 
@@ -415,6 +420,6 @@ class Character extends FlxSprite
 
 	public function quickAnimAdd(name:String, anim:String)
 	{
-		animation.addByPrefix(name, anim, 24, false);
+		animation.addByPrefix(name, anim, 24, this.forceLoop);
 	}
 }

@@ -171,6 +171,14 @@ class Paths
 	{
 		return getPath('data/$key.xml', TEXT, library);
 	}
+	inline static public function menuJson(key:String, ?library:String = "dawn")
+	{
+		return getPath('images/menu/$key.json', TEXT, library);
+	}
+	inline static public function imageJson(key:String, ?library:String = "dawn")
+	{
+		return getPath('images/$key.json', TEXT, library);
+	}
 
 	inline static public function json(key:String, ?library:String)
 	{
