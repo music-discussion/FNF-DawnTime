@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-90,
+				-140
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "TAM idle"
+		},
+		{
+			"offsets": [
+				11,
+				-145
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "TAM Left"
+		},
+		{
+			"offsets": [
+				-50,
+			        -230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "TAM Up"
+		},
+		{
+			"offsets": [
+				-101,
+				-140
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "TAM Right"
+		},
+		{
+			"offsets": [
+				0,
+			        0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "shoot",
+			"indices": [],
+			"name": "omg Shoot!"
+		},
+		{
+			"offsets": [
+				14,
+				13
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "TAM Down"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/T.A.M-angry_Assets",
+	"position": [
+		230,
+		70
+	],
+	"healthicon": "TAM-angry",
+	"flip_x": false,
+	"healthbar_colors": [
+		161,
+		161,
+		161
+	],
+	"camera_position": [
+		250,
+		250
+	],
+	"sing_duration": 6.1,
+	"scale": 0.9
+}

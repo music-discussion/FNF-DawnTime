@@ -1,0 +1,89 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-90,
+				-140
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle"
+		},
+		{
+			"offsets": [
+				11,
+				-145
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "left"
+		},
+		{
+			"offsets": [
+				-50,
+				-230
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "down"
+		},
+		{
+			"offsets": [
+				-86,
+				-104
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "up"
+		},
+		{
+			"offsets": [
+				-101,
+				-140
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "right"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "",
+			"loop": false,
+			"name": ""
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/T.A.M_assets",
+	"position": [
+		230,
+		70
+	],
+	"healthicon": "tam",
+	"flip_x": false,
+	"healthbar_colors": [
+		175,
+		102,
+		206
+	],
+	"camera_position": [
+		250,
+		250
+	],
+	"sing_duration": 6.1,
+	"scale": 0.9
+}

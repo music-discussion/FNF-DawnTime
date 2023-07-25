@@ -91,7 +91,6 @@ class FunnyState extends MusicBeatState // i just stole this file from another m
                 for (file in files)
 				{
                     if (file.endsWith(".json")) {
-                       // trace("found json");
 						var rawJson = Assets.getText(Paths.imageJson("funny/" + name + "/config"));
 				        var json:CreditsFile = cast Json.parse(rawJson);
                         jsonc = json;

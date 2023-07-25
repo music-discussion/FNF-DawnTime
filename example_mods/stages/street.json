@@ -1,0 +1,9 @@
+{
+	"directory": "tamweekyippi",
+	"defaultZoom": 0.9,
+	"isPixelStage": false,
+
+	"boyfriend": [ 900, 100 ],
+	"girlfriend": [ 590, 130 ],
+	"opponent": [ 0, 100 ]
+}

@@ -48,6 +48,8 @@ class DesktopState extends MusicBeatState
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
 
+	// there is a better way to do this but it's too late i'm afraid
+
 	var storyModeSprite:ExecutableSprite;
 	var optionsSprite:ExecutableSprite;
 	var creditsMenuSprite:ExecutableSprite;
@@ -57,6 +59,9 @@ class DesktopState extends MusicBeatState
 	var searchSprite:ExecutableSprite;
 	var discordSprite:ExecutableSprite;
 	var uselessSprite:ExecutableSprite;
+	var baldiBackSprite:ExecutableSprite;
+	var flappyBirdSprite:ExecutableSprite;
+
 	var lastSpriteClicked:FlxSprite = null;
 	var bigBackground = true;
 
@@ -162,6 +167,16 @@ class DesktopState extends MusicBeatState
 		add(discordSprite);
 		add(discordSprite.fileText);
 
+		baldiBackSprite = new ExecutableSprite(520, 250, "baldiback", 'dawnassets/mainmenu/baldiback');
+		baldiBackSprite.scrollFactor.set(0, 0);
+		baldiBackSprite.antialiasing = ClientPrefs.globalAntialiasing;
+		baldiBackSprite.scale.set(0.2, 0.2);
+		baldiBackSprite.updateHitbox();
+		baldiBackSprite.xAdd = 10;
+		baldiBackSprite.yAdd = 150;
+		add(baldiBackSprite);
+		add(baldiBackSprite.fileText);
+
 		searchSprite = new ExecutableSprite(200, FlxG.height - 125, "search", 'dawnassets/mainmenu/search');
 		searchSprite.scrollFactor.set(0, 0);
 		searchSprite.antialiasing = ClientPrefs.globalAntialiasing;
@@ -171,7 +186,7 @@ class DesktopState extends MusicBeatState
 		add(searchSprite);
 		add(searchSprite.fileText);
 
-		uselessSprite = new ExecutableSprite(710, 250, "useless", 'dawnassets/mainmenu/placeholder');
+		uselessSprite = new ExecutableSprite(710, 250, "useless", 'dawnassets/mainmenu/useless');
 		uselessSprite.scrollFactor.set(0, 0);
 		uselessSprite.antialiasing = ClientPrefs.globalAntialiasing;
 		uselessSprite.scale.set(0.3, 0.3);
@@ -180,6 +195,16 @@ class DesktopState extends MusicBeatState
 		uselessSprite.yAdd = 120;
 		add(uselessSprite);
 		add(uselessSprite.fileText);
+
+		flappyBirdSprite = new ExecutableSprite(200, 400, "flappybird", 'dawnassets/mainmenu/bird');
+		flappyBirdSprite.scrollFactor.set(0, 0);
+		flappyBirdSprite.antialiasing = ClientPrefs.globalAntialiasing;
+		flappyBirdSprite.scale.set(0.75, 0.75);
+		flappyBirdSprite.updateHitbox();
+		flappyBirdSprite.xAdd = 5;
+		flappyBirdSprite.yAdd = 140;
+		add(flappyBirdSprite);
+		add(flappyBirdSprite.fileText);
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		camFollowPos = new FlxObject(0, 0, 1, 1);
@@ -236,6 +261,7 @@ class DesktopState extends MusicBeatState
 	}
 	#end
 
+	var uselessTimes:Int = 0;
 	override function update(elapsed:Float)
 	{
 		if (FlxG.sound.music.volume < 0.8)
@@ -329,6 +355,26 @@ class DesktopState extends MusicBeatState
 				lastSpriteClicked = null;
 			}
 
+			if (FlxG.mouse.overlaps(baldiBackSprite))
+				{
+					if (lastSpriteClicked != baldiBackSprite)
+					{
+						lastSpriteClicked = baldiBackSprite;
+						FlxG.sound.play(Paths.sound('scrollMenu'));
+					}
+					if (FlxG.mouse.justPressed) 
+					{
+						FlxG.mouse.visible = false;
+						selectedSomethin = true;
+						FlxG.sound.play(Paths.sound('confirmMenu'));
+						MusicBeatState.switchState(new BaldiBackState());
+					}
+				} else 
+				if (lastSpriteClicked == baldiBackSprite && !FlxG.mouse.overlaps(baldiBackSprite))
+				{
+					lastSpriteClicked = null;
+				}
+
 			if (FlxG.mouse.overlaps(searchSprite))
 			{
 				if (lastSpriteClicked != searchSprite)
@@ -396,7 +442,34 @@ class DesktopState extends MusicBeatState
 				}
 				if (FlxG.mouse.justPressed) 
 				{
-					FlxG.sound.play(Paths.soundRandom("missnote", 1, 3, "shared"));
+					uselessTimes++;
+					if (uselessTimes == 5)
+					{
+						FlxG.sound.play(Paths.sound('confirmMenu'));
+						FlxG.mouse.visible = false;
+            			DesktopState.selectedSomethin = true;
+            			FlxG.sound.play(Paths.sound('confirmMenu'));
+
+            			CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
+
+            			var songLowercase:String = Paths.formatToSongPath("n-a-real");
+            			var poop:String = Highscore.formatSong(songLowercase, 2);
+           				trace(poop);
+
+						PlayState.SONG = Song.loadFromJson(poop, songLowercase);
+						PlayState.isStoryMode = false;
+						PlayState.storyDifficulty = 2;
+
+						trace('CURRENT WEEK: ' + WeekData.getWeekFileName());
+						if (FlxG.keys.pressed.SHIFT){
+            			    LoadingState.loadAndSwitchState(new ChartingState());
+            			}else{
+            			    LoadingState.loadAndSwitchState(new PlayState());
+            			}
+            			FlxG.sound.music.volume = 0;
+					}	
+					else
+						FlxG.sound.play(Paths.soundRandom("missnote", 1, 3, "shared"));
 				}
 			} else 
 			if (lastSpriteClicked == uselessSprite && !FlxG.mouse.overlaps(uselessSprite))
@@ -412,12 +485,44 @@ class DesktopState extends MusicBeatState
 				MusicBeatState.switchState(new TitleState());
 			}
 
+			if (FlxG.mouse.overlaps(flappyBirdSprite))
+				{
+					if (lastSpriteClicked != flappyBirdSprite)
+					{
+						lastSpriteClicked = flappyBirdSprite;
+						FlxG.sound.play(Paths.sound('scrollMenu'));
+					}
+					if (FlxG.mouse.justPressed) 
+					{
+						//FlxG.mouse.visible = false;
+						selectedSomethin = true;
+						FlxG.sound.play(Paths.sound('confirmMenu'));
+						//FlxG.sound.play(Paths.soundRandom("missnote", 1, 3, "shared"));
+						MusicBeatState.switchState(new bird.MenuState());
+					}
+				} else 
+				if (lastSpriteClicked == flappyBirdSprite && !FlxG.mouse.overlaps(flappyBirdSprite))
+				{
+					lastSpriteClicked = null;
+				}
+
 			#if desktop
 			if (FlxG.keys.anyJustPressed(debugKeys))
 			{
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('confirmMenu'));
+				if (CoolUtil.difficulties == [])
+				{
+					CoolUtil.difficulties = CoolUtil.defaultDifficulties.copy();
+					trace("Difficulties are empty. Set them to default to prevent crash when using the Chart Editor.");
+				}
 				MusicBeatState.switchState(new MasterEditorMenu());
+			}
+			#end
+			#if debug
+			if (FlxG.keys.justPressed.SPACE)
+			{
+				MusicBeatState.switchState(new test.PlayState());
 			}
 			#end
 		}

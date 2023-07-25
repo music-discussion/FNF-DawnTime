@@ -1378,6 +1378,26 @@ class FunkinLua {
 			return PlayState.instance.health;
 		});
 
+		Lua_helper.add_callback(lua, "setHealth2", function(value:Float = 0) {
+			PlayState.instance.dad2Health = value;
+		});
+		Lua_helper.add_callback(lua, "addHealth2", function(value:Float = 0) {
+			PlayState.instance.dad2Health += value;
+		});
+		Lua_helper.add_callback(lua, "getHealth2", function() {
+			return PlayState.instance.dad2Health;
+		});
+
+		Lua_helper.add_callback(lua, "setHealth3", function(value:Float = 0) {
+			PlayState.instance.dad3Health = value;
+		});
+		Lua_helper.add_callback(lua, "addHealth3", function(value:Float = 0) {
+			PlayState.instance.dad3Health += value;
+		});
+		Lua_helper.add_callback(lua, "getHealth3", function() {
+			return PlayState.instance.dad3Health;
+		});
+
 		Lua_helper.add_callback(lua, "getColorFromHex", function(color:String) {
 			if(!color.startsWith('0x')) color = '0xff' + color;
 			return Std.parseInt(color);

@@ -348,6 +348,10 @@ class PlayState extends MusicBeatState
 	// stores the last combo score objects in an array
 	public static var lastScore:Array<FlxSprite> = [];
 
+	public var dad1HealthDrain:Float = 0;
+	public var dad2HealthDrain:Float = 0;
+	public var dad3HealthDrain:Float = 0;
+
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
@@ -374,6 +378,12 @@ class PlayState extends MusicBeatState
 			'NOTE_UP',
 			'NOTE_RIGHT'
 		];
+
+		// some event variables
+		dad1HealthDrain = 0;
+		dad2HealthDrain = 0;
+		dad3HealthDrain = 0;
+		lastNotePressed = "";
 
 		//Ratings
 		ratingsData.push(new Rating('sick')); //default rating
@@ -411,7 +421,6 @@ class PlayState extends MusicBeatState
 		instakillOnMiss = ClientPrefs.getGameplaySetting('instakill', false);
 		practiceMode = ClientPrefs.getGameplaySetting('practice', false);
 		cpuControlled = ClientPrefs.getGameplaySetting('botplay', false);
-		lastNotePressed = "";
 
 		// var gameCam:FlxCamera = FlxG.camera;		
 		camGame = new FlxCamera();
@@ -3273,40 +3282,52 @@ class PlayState extends MusicBeatState
 		if (dad3Health > 2)
 			dad3Health = 2;
 
-		if (healthBar.percent < 20)
+		if (healthBar.percent < 20){
 			iconP1.animation.curAnim.curFrame = 1;
+			iconP2.animation.curAnim.curFrame = 2;
+			}
 		else
-			iconP1.animation.curAnim.curFrame = 0;
-
-		if (healthBar.percent > 80)
+		if (healthBar.percent > 80){
 			iconP2.animation.curAnim.curFrame = 1;
-		else
+			iconP1.animation.curAnim.curFrame = 2;
+		}
+		else{
 			iconP2.animation.curAnim.curFrame = 0;
+			iconP1.animation.curAnim.curFrame = 0;
+		}
 
 		if (Std.parseInt(SONG.opponentCount) != null)
 			{
 				if (Std.parseInt(SONG.opponentCount) >= 2) 
 				{
-					if (healthBar2.percent < 20)
+					if (healthBar.percent < 20){
 						iconP3.animation.curAnim.curFrame = 1;
+						iconP4.animation.curAnim.curFrame = 2;
+						}
 					else
+					if (healthBar.percent > 80){
+						iconP3.animation.curAnim.curFrame = 1;
+						iconP4.animation.curAnim.curFrame = 2;
+					}
+					else{
 						iconP3.animation.curAnim.curFrame = 0;
-			
-					if (healthBar2.percent > 80)
-						iconP4.animation.curAnim.curFrame = 1;
-					else
 						iconP4.animation.curAnim.curFrame = 0;
+					}
 					if (Std.parseInt(SONG.opponentCount) == 3)
 					{
-						if (healthBar3.percent < 20)
-							iconP5.animation.curAnim.curFrame = 1;
+						if (healthBar.percent < 20){
+							iconP3.animation.curAnim.curFrame = 1;
+							iconP4.animation.curAnim.curFrame = 2;
+							}
 						else
-							iconP6.animation.curAnim.curFrame = 0;
-				
-						if (healthBar3.percent > 80)
-							iconP5.animation.curAnim.curFrame = 1;
-						else
-							iconP6.animation.curAnim.curFrame = 0;
+						if (healthBar.percent > 80){
+							iconP3.animation.curAnim.curFrame = 1;
+							iconP4.animation.curAnim.curFrame = 2;
+						}
+						else{
+							iconP3.animation.curAnim.curFrame = 0;
+							iconP4.animation.curAnim.curFrame = 0;
+						}
 					}
 				}
 			}
@@ -4115,6 +4136,55 @@ class PlayState extends MusicBeatState
 				} else {
 					FunkinLua.setVarInArray(this, value1, value2);
 				}
+			case 'Change Regular Note':
+				var charType:Int = 0;
+				switch(value1.toLowerCase().trim()) {
+					case 'dad' | 'opponent':
+						charType = 1;
+					case 'dad2':
+						charType = 2;
+					case 'dad3':
+						charType = 3;
+					default:
+						charType = Std.parseInt(value1);
+						if(Math.isNaN(charType)) charType = 1;
+				}
+
+				switch (charType)
+				{
+					case 1:
+						lastNotePressed = "default";
+					case 2:
+						lastNotePressed = "Opponent 2";
+					case 3:
+						lastNotePressed = "Opponent 3";
+				}
+			case 'Health Drain':
+				var charType:Int = 0;
+				switch(value1.toLowerCase().trim()) {
+					case 'dad' | 'opponent':
+						charType = 1;
+					case 'dad2':
+						charType = 2;
+					case 'dad3':
+						charType = 3;
+					default:
+						charType = Std.parseInt(value1);
+						if(Math.isNaN(charType)) charType = 1;
+				}
+
+				var healthDrainAmt = Std.parseFloat(value2);
+				if(Math.isNaN(healthDrainAmt)) healthDrainAmt = 0;
+	
+				switch (charType)
+				{
+					case 1:
+						dad1HealthDrain = healthDrainAmt;
+					case 2:
+						dad2HealthDrain = healthDrainAmt;
+					case 3:
+						dad3HealthDrain = healthDrainAmt;
+				}
 		}
 		callOnLuas('onEvent', [eventName, value1, value2]);
 	}
@@ -4840,6 +4910,13 @@ class PlayState extends MusicBeatState
 		switch(daNote.noteType)
 		{
 			case 'Opponent 2':
+					lastNotePressed = daNote.noteType;
+			case 'Opponent 3':
+				lastNotePressed = daNote.noteType;
+		}
+		switch(lastNotePressed)
+		{
+			case 'Opponent 2':
 				dad2Health -= daNote.missHealth * healthLoss;
 			case 'Opponent 3':
 				dad3Health -= daNote.missHealth * healthLoss;
@@ -4955,11 +5032,21 @@ class PlayState extends MusicBeatState
 			switch(note.noteType)
 			{
 				case 'Opponent 2':
+					lastNotePressed = note.noteType;
+				case 'Opponent 3':
+					lastNotePressed = note.noteType;
+			}
+			switch(lastNotePressed)
+			{
+				case 'Opponent 2':
 					char = dad2;
+					dad2Health -= dad2HealthDrain;
 				case 'Opponent 3':
 					char = dad3;
+					dad3Health -= dad3HealthDrain;
 				default:
 					char = dad;
+					health -= dad1HealthDrain;
 			}
 			if(note.gfNote) {
 				char = gf;
@@ -5038,6 +5125,14 @@ class PlayState extends MusicBeatState
 			}
 
 			switch(note.noteType)
+			{
+				case 'Opponent 2':
+					lastNotePressed = "Opponent 2";
+				case 'Opponent 3':
+					lastNotePressed = "Opponent 3";
+			}
+
+			switch(lastNotePressed)
 			{
 				case 'Opponent 2':
 					dad2Health += note.hitHealth * healthGain;

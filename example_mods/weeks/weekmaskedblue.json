@@ -1,0 +1,50 @@
+{
+	"storyName": "this guy is so sus",
+	"difficulties": "hard",
+	"hideFreeplay": false,
+	"weekBackground": "themaskedblue",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"weekBefore": "weekkino",
+	"startUnlocked": false,
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"songs": [
+		[
+			"stickying",
+			"dad",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"stressive",
+			"dad",
+			[
+				146,
+				113,
+				253
+			]
+		],
+		[
+			"tranquility",
+			"dad",
+			[
+				146,
+				113,
+				253
+			]
+		]
+	],
+	"hideStoryMode": false,
+	"weekName": "oma gad you finished cizer week!",
+	"hiddenUntilUnlocked": false
+}

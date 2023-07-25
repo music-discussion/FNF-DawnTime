@@ -1,0 +1,3 @@
+Makes the screen darker
+
+Value 1: true or false

@@ -107,11 +107,22 @@ class Song
 		#end
 
 		if(rawJson == null) {
-			#if sys
-			rawJson = File.getContent(Paths.json(formattedFolder + '/' + formattedSong)).trim();
-			#else
-			rawJson = Assets.getText(Paths.json(formattedFolder + '/' + formattedSong)).trim();
-			#end
+			if (FileSystem.exists(Paths.json(formattedFolder + '/' + formattedSong))) 
+				rawJson = Assets.getText(Paths.json(formattedFolder + '/' + formattedSong)).trim();
+			else {
+				trace("Could not find song in regular data folder. trying mod folder.");
+				var moddyFile:String = Paths.modsJson(formattedFolder + '/' + formattedSong);
+				if(FileSystem.exists(moddyFile))
+					rawJson = File.getContent(moddyFile).trim();
+				else
+					trace("could not find song at all");
+			}
+		}
+
+		if (rawJson == null)
+		{
+			trace("rawJson is null. prevented while loop crash.");
+			return null;
 		}
 
 		while (!rawJson.endsWith("}"))

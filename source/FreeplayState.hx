@@ -14,8 +14,10 @@ import flixel.util.FlxColor;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 import lime.utils.Assets;
+#if sys
 import sys.io.File;
 import sys.FileSystem;
+#end
 import flixel.FlxSubState;
 import flash.media.Sound;
 
@@ -89,7 +91,7 @@ class FreeplayState extends MusicBeatState
                 files = FileSystem.readDirectory(path); //grabs all files in the directory
                 var jsonc:FreeplayCharacter = null;
 
-                var rawJson = Assets.getText(Paths.imageJson("weeks/" + name));
+				var rawJson = Assets.getText(Paths.imageJson("weeks/" + name));
 				var json:FreeplayCharacter = cast Json.parse(rawJson);
                 jsonc = json;
 

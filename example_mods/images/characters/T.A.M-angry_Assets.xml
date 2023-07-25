@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="T.A.M-angry_Assets.png">
+<SubTexture name="TAM idle0000" x="0" y="0" width="399" height="610" frameX="-200" frameY="-125" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM idle0001" x="399" y="0" width="394" height="618" frameX="-203" frameY="-117" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM idle0002" x="793" y="0" width="392" height="617" frameX="-203" frameY="-118" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM idle0003" x="1185" y="0" width="387" height="618" frameX="-206" frameY="-116" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM idle0004" x="1572" y="0" width="385" height="617" frameX="-206" frameY="-117" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Right0000" x="1957" y="0" width="473" height="617" frameX="-212" frameY="-118" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Right0001" x="1957" y="0" width="473" height="617" frameX="-212" frameY="-118" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Right0002" x="0" y="618" width="454" height="620" frameX="-211" frameY="-115" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Right0003" x="454" y="618" width="438" height="620" frameX="-209" frameY="-115" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Right0004" x="892" y="618" width="428" height="619" frameX="-208" frameY="-116" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Right0005" x="1320" y="618" width="428" height="619" frameX="-208" frameY="-116" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Right0006" x="1748" y="618" width="428" height="619" frameX="-208" frameY="-116" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Left0000" x="2176" y="618" width="371" height="591" frameX="-129" frameY="-142" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Left0001" x="2176" y="618" width="371" height="591" frameX="-129" frameY="-142" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Left0002" x="0" y="1238" width="383" height="587" frameX="-137" frameY="-145" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Left0003" x="383" y="1238" width="380" height="587" frameX="-147" frameY="-146" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Left0004" x="763" y="1238" width="383" height="586" frameX="-158" frameY="-147" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Left0005" x="1146" y="1238" width="383" height="586" frameX="-158" frameY="-147" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Left0006" x="1529" y="1238" width="383" height="586" frameX="-158" frameY="-147" frameWidth="768" frameHeight="768" />
+<SubTexture name="omg Shoot!0000" x="1912" y="1238" width="491" height="621" frameX="-207" frameY="-114" frameWidth="768" frameHeight="768" />
+<SubTexture name="omg Shoot!0001" x="1912" y="1238" width="491" height="621" frameX="-207" frameY="-114" frameWidth="768" frameHeight="768" />
+<SubTexture name="omg Shoot!0002" x="0" y="1859" width="546" height="621" frameX="-207" frameY="-114" frameWidth="768" frameHeight="768" />
+<SubTexture name="omg Shoot!0003" x="546" y="1859" width="442" height="621" frameX="-207" frameY="-114" frameWidth="768" frameHeight="768" />
+<SubTexture name="omg Shoot!0004" x="988" y="1859" width="403" height="621" frameX="-207" frameY="-114" frameWidth="768" frameHeight="768" />
+<SubTexture name="omg Shoot!0005" x="1391" y="1859" width="403" height="621" frameX="-207" frameY="-114" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Down0000" x="1794" y="1859" width="519" height="507" frameX="-57" frameY="-238" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Down0001" x="2313" y="1859" width="515" height="507" frameX="-61" frameY="-238" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Down0002" x="0" y="2480" width="513" height="522" frameX="-59" frameY="-222" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Down0003" x="513" y="2480" width="569" height="526" frameX="-1" frameY="-219" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Down0004" x="1082" y="2480" width="543" height="529" frameX="-21" frameY="-216" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Down0005" x="1625" y="2480" width="514" height="529" frameX="-50" frameY="-216" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Up0000" x="2139" y="2480" width="307" height="648" frameX="-223" frameY="-89" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Up0001" x="2139" y="2480" width="307" height="648" frameX="-223" frameY="-89" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Up0002" x="2446" y="2480" width="320" height="641" frameX="-220" frameY="-95" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Up0003" x="0" y="3128" width="331" height="635" frameX="-220" frameY="-101" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Up0004" x="331" y="3128" width="345" height="631" frameX="-216" frameY="-106" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Up0005" x="676" y="3128" width="345" height="631" frameX="-216" frameY="-106" frameWidth="768" frameHeight="768" />
+<SubTexture name="TAM Up0006" x="1021" y="3128" width="345" height="631" frameX="-216" frameY="-106" frameWidth="768" frameHeight="768" />
+</TextureAtlas>

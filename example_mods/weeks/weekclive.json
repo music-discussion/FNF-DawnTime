@@ -1,0 +1,50 @@
+{
+	"storyName": "fake sans?! LoL",
+	"difficulties": "hard",
+	"hideFreeplay": false,
+	"weekBackground": "clive",
+	"weekBefore": "tamweekyippi",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"startUnlocked": false,
+	"hideStoryMode": false,
+	"songs": [
+		[
+			"snare",
+			"clive",
+			[
+				0,
+				0,
+				133
+			]
+		],
+		[
+			"serious blue",
+			"clive",
+			[
+				0,
+				0,
+				133
+			]
+		],
+		[
+			"insolence",
+			"clive",
+			[
+				0,
+				0,
+				133
+			]
+		]
+	],
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"hiddenUntilUnlocked": false,
+	"weekName": "Gosh pathetic, u need jokes ?"
+}

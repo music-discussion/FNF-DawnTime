@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="tam.png"><SubTexture name="tam idle0000" x="2766" y="0" width="599" height="1271" frameX="-98" frameY="-263" frameWidth="768" frameHeight="1550" />
+<SubTexture name="tam idle0001" x="4019" y="1255" width="630" height="1251" frameX="-66" frameY="-283" frameWidth="768" frameHeight="1550" />
+<SubTexture name="tam idle0002" x="3365" y="0" width="654" height="1271" frameX="-40" frameY="-263" frameWidth="768" frameHeight="1550" />
+<SubTexture name="tam idle0003" x="1995" y="1415" width="663" height="1282" frameX="-31" frameY="-252" frameWidth="768" frameHeight="1550" />
+<SubTexture name="tam idle0004" x="665" y="1415" width="665" height="1290" frameX="-31" frameY="-244" frameWidth="768" frameHeight="1550" />
+<SubTexture name="tam idle0005" x="0" y="1415" width="665" height="1292" frameX="-31" frameY="-242" frameWidth="768" frameHeight="1550" />
+<SubTexture name="tam idle0006" x="1330" y="1415" width="665" height="1289" frameX="-31" frameY="-245" frameWidth="768" frameHeight="1550" />
+<SubTexture name="tam down0000" x="3551" y="3973" width="840" height="1100" frameX="-243" frameY="-444" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam down0001" x="2686" y="3973" width="865" height="1136" frameX="-218" frameY="-410" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam down0002" x="1811" y="3973" width="875" height="1159" frameX="-208" frameY="-388" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam down0003" x="932" y="3973" width="879" height="1164" frameX="-204" frameY="-383" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam down0004" x="932" y="3973" width="879" height="1164" frameX="-204" frameY="-383" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam left0000" x="0" y="3973" width="932" height="1204" frameX="-305" frameY="-336" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam left0001" x="4913" y="0" width="909" height="1208" frameX="-335" frameY="-332" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam left0002" x="4913" y="1208" width="891" height="1207" frameX="-359" frameY="-333" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam left0003" x="4913" y="2415" width="877" height="1207" frameX="-373" frameY="-333" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam left0004" x="4019" y="2506" width="874" height="1207" frameX="-376" frameY="-333" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam left0005" x="4019" y="2506" width="874" height="1207" frameX="-376" frameY="-333" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam right0000" x="4019" y="0" width="894" height="1255" frameX="-253" frameY="-285" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam right0001" x="2391" y="2707" width="834" height="1259" frameX="-287" frameY="-281" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam right0002" x="1594" y="2707" width="797" height="1263" frameX="-318" frameY="-277" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam right0003" x="0" y="2707" width="797" height="1266" frameX="-318" frameY="-274" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam right0004" x="797" y="2707" width="797" height="1266" frameX="-318" frameY="-274" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam right0005" x="797" y="2707" width="797" height="1266" frameX="-318" frameY="-274" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam up0000" x="0" y="0" width="699" height="1415" frameX="-316" frameY="-120" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam up0001" x="699" y="0" width="697" height="1391" frameX="-314" frameY="-144" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam up0002" x="1396" y="0" width="684" height="1372" frameX="-312" frameY="-163" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam up0003" x="2080" y="0" width="686" height="1362" frameX="-310" frameY="-173" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam up0004" x="2080" y="0" width="686" height="1362" frameX="-310" frameY="-173" frameWidth="1319" frameHeight="1550" />
+<SubTexture name="tam up0005" x="2080" y="0" width="686" height="1362" frameX="-310" frameY="-173" frameWidth="1319" frameHeight="1550" />
+</TextureAtlas>

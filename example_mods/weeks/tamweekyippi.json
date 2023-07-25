@@ -1,0 +1,50 @@
+{
+	"songs": [
+		[
+			"dusk",
+			"tam",
+			[
+				60,
+				40,
+				100
+			]
+		],
+		[
+			"after hours",
+			"tam",
+			[
+				60,
+				40,
+				100
+			]
+		],
+		[
+			"roaster",
+			"tam",
+			[
+				60,
+				40,
+				100
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "tam",
+	"difficulties": "hard",
+	"weekCharacters": [
+		"",
+		"",
+		""
+	],
+	"storyName": "and why he is ourple",
+	"weekName": "omg you finished purple guy week!!! fr",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}
