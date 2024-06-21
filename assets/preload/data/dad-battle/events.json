@@ -1,216 +1,32 @@
 {
 	"song": {
-		"speed": 2.3,
-		"stage": "stage",
-		"player1": "bf",
-		"player2": "dad",
 		"events": [
 			[
-				32000,
+				16000,
 				[
 					[
-						"Dadbattle Spotlight",
+						"Change Regular Note",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				21583.3333333333,
+				[
+					[
+						"Change Regular Note",
 						"1",
 						""
 					]
 				]
 			],
 			[
-				42666.6666666667,
+				30666.6666666667,
 				[
 					[
-						"Dadbattle Spotlight",
-						"3",
-						""
-					]
-				]
-			],
-			[
-				48333.3333333334,
-				[
-					[
-						"Add Camera Zoom",
-						"",
-						""
-					]
-				]
-			],
-			[
-				48666.6666666667,
-				[
-					[
-						"Add Camera Zoom",
-						"",
-						""
-					]
-				]
-			],
-			[
-				49000,
-				[
-					[
-						"Add Camera Zoom",
-						"",
-						""
-					]
-				]
-			],
-			[
-				49666.6666666667,
-				[
-					[
-						"Add Camera Zoom",
-						"",
-						""
-					]
-				]
-			],
-			[
-				50000,
-				[
-					[
-						"Add Camera Zoom",
-						"",
-						""
-					]
-				]
-			],
-			[
-				50333.3333333334,
-				[
-					[
-						"Add Camera Zoom",
-						"",
-						""
-					]
-				]
-			],
-			[
-				51000,
-				[
-					[
-						"Add Camera Zoom",
-						"",
-						""
-					]
-				]
-			],
-			[
-				51333.3333333334,
-				[
-					[
-						"Add Camera Zoom",
-						"",
-						""
-					]
-				]
-			],
-			[
-				51666.6666666667,
-				[
-					[
-						"Add Camera Zoom",
-						"",
-						""
-					]
-				]
-			],
-			[
-				52000,
-				[
-					[
-						"Add Camera Zoom",
-						"0.015",
-						"0"
-					]
-				]
-			],
-			[
-				52166.6666666667,
-				[
-					[
-						"Add Camera Zoom",
-						"0.03",
-						""
-					]
-				]
-			],
-			[
-				52333.3333333334,
-				[
-					[
-						"Add Camera Zoom",
-						"0.03",
-						""
-					]
-				]
-			],
-			[
-				52500,
-				[
-					[
-						"Add Camera Zoom",
-						"0.03",
-						""
-					]
-				]
-			],
-			[
-				52666.6666666667,
-				[
-					[
-						"Add Camera Zoom",
-						"0.03",
-						""
-					]
-				]
-			],
-			[
-				52833.3333333334,
-				[
-					[
-						"Add Camera Zoom",
-						"0.03",
-						""
-					]
-				]
-			],
-			[
-				52916.6666666667,
-				[
-					[
-						"Add Camera Zoom",
-						"0.03",
-						""
-					]
-				]
-			],
-			[
-				53000,
-				[
-					[
-						"Add Camera Zoom",
-						"0.03",
-						""
-					]
-				]
-			],
-			[
-				53083.3333333334,
-				[
-					[
-						"Add Camera Zoom",
-						"0.03",
-						""
-					]
-				]
-			],
-			[
-				53166.6666666667,
-				[
-					[
-						"Add Camera Zoom",
-						"0.03",
+						"Change Regular Note",
+						"2",
 						""
 					]
 				]
@@ -219,30 +35,52 @@
 				53250,
 				[
 					[
-						"Add Camera Zoom",
-						"0.03",
+						"Change Regular Note",
+						"1",
 						""
 					]
 				]
 			],
 			[
-				53333.3333333334,
+				58583.3333333334,
 				[
 					[
-						"Dadbattle Spotlight",
-						"0",
+						"Change Regular Note",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				62666.6666666667,
+				[
+					[
+						"Change Regular Note",
+						"1",
+						""
+					]
+				]
+			],
+			[
+				74583.3333333334,
+				[
+					[
+						"Change Regular Note",
+						"2",
+						""
+					]
+				]
+			],
+			[
+				79916.6666666667,
+				[
+					[
+						"Change Regular Note",
+						"1",
 						""
 					]
 				]
 			]
-		],
-		"notes": [],
-		"splashSkin": null,
-		"validScore": false,
-		"gfVersion": "gf",
-		"bpm": 180,
-		"arrowSkin": null,
-		"needsVoices": true,
-		"song": "Dad Battle"
+		]
 	}
 }

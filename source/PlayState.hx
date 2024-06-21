@@ -133,7 +133,7 @@ class PlayState extends MusicBeatState
 
 	public var DAD2_X:Float = 250;
 	public var DAD2_Y:Float = 100;
-	public var DAD3_X:Float = 400;
+	public var DAD3_X:Float = 350;
 	public var DAD3_Y:Float = 100;
 
 	public var songSpeedTween:FlxTween;
@@ -435,7 +435,7 @@ class PlayState extends MusicBeatState
 		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
 
 		FlxG.cameras.setDefaultDrawTarget(camGame, true);
-		CustomFadeTransition.nextCamera = camOther;
+		FreezeFrameTransition.nextCamera = camOther;
 
 		persistentUpdate = true;
 		persistentDraw = true;
@@ -1012,13 +1012,13 @@ class PlayState extends MusicBeatState
 		{
 			if (Std.parseInt(SONG.opponentCount) >= 2) 
 			{
-				dad2 = new Character(0, 0, SONG.dad2);
+				dad2 = new Character(DAD2_X, DAD2_Y, SONG.dad2);
 				startCharacterPos(dad2, true);
 				dadGroup.add(dad2);
 				startCharacterLua(dad2.curCharacter);
 				if (Std.parseInt(SONG.opponentCount) == 3) 
 				{
-					dad3 = new Character(0, 0, SONG.dad3);
+					dad3 = new Character(DAD3_X, DAD3_Y, SONG.dad3);
 					startCharacterPos(dad3, true);
 					dadGroup.add(dad3);
 					startCharacterLua(dad3.curCharacter);
@@ -1527,7 +1527,7 @@ class PlayState extends MusicBeatState
 		}
 		Paths.clearUnusedMemory();
 		
-		CustomFadeTransition.nextCamera = camOther;
+		FreezeFrameTransition.nextCamera = camOther;
 		if(eventNotes.length < 1) checkEventNote();
 	}
 
@@ -4364,7 +4364,7 @@ class PlayState extends MusicBeatState
 
 					cancelMusicFadeTween();
 					if(FlxTransitionableState.skipNextTransIn) {
-						CustomFadeTransition.nextCamera = null;
+						FreezeFrameTransition.nextCamera = null;
 					}
 					MusicBeatState.switchState(new StoryMenuState());
 
@@ -4427,7 +4427,7 @@ class PlayState extends MusicBeatState
 				WeekData.loadTheFirstEnabledMod();
 				cancelMusicFadeTween();
 				if(FlxTransitionableState.skipNextTransIn) {
-					CustomFadeTransition.nextCamera = null;
+					FreezeFrameTransition.nextCamera = null;
 				}
 				MusicBeatState.switchState(new FreeplayState());
 				FlxG.sound.playMusic(Paths.music('freakyMenu'));

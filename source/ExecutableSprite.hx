@@ -35,6 +35,7 @@ class ExecutableSprite extends FlxSprite
         fileText = new FlxText(x + xAdd, y + yAdd, 0, fileName + ".exe", 12);
 		fileText.scrollFactor.set();
 		fileText.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		fileText.text = "";
 	}
 
 	override function update(elapsed:Float)

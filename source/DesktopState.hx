@@ -63,7 +63,7 @@ class DesktopState extends MusicBeatState
 	var flappyBirdSprite:ExecutableSprite;
 
 	var lastSpriteClicked:FlxSprite = null;
-	var bigBackground = true;
+	var bigBackground:Bool = true;
 
 	//var objectManager:ObjectManager;
 
@@ -115,6 +115,8 @@ class DesktopState extends MusicBeatState
 			add(bg);
 		}
 
+		// 1ST ROW SPRITES
+
 		storyModeSprite = new ExecutableSprite(200, 35, "storymode", 'dawnassets/mainmenu/story');
 		storyModeSprite.scrollFactor.set(0, 0);
 		storyModeSprite.antialiasing = ClientPrefs.globalAntialiasing;
@@ -147,46 +149,39 @@ class DesktopState extends MusicBeatState
 		add(freeplaySprite);
 		add(freeplaySprite.fileText);
 
-		funnySprite = new ExecutableSprite(200, 250, "funny", 'dawnassets/mainmenu/funny');
+		// 2ND ROW SPRITES
+
+		funnySprite = new ExecutableSprite(200, 230, "funny", 'dawnassets/mainmenu/funny');
 		funnySprite.scrollFactor.set(0, 0);
 		funnySprite.antialiasing = ClientPrefs.globalAntialiasing;
-		funnySprite.scale.set(1, 1);
+		funnySprite.scale.set(1.5, 1.5);
 		funnySprite.updateHitbox();
 		funnySprite.xAdd = 10;
 		funnySprite.yAdd = 90;
 		add(funnySprite);
 		add(funnySprite.fileText);
 
-		discordSprite = new ExecutableSprite(400, 250, "discord", 'dawnassets/mainmenu/discord');
+		discordSprite = new ExecutableSprite(375, 230, "discord", 'dawnassets/mainmenu/discord');
 		discordSprite.scrollFactor.set(0, 0);
 		discordSprite.antialiasing = ClientPrefs.globalAntialiasing;
-		discordSprite.scale.set(0.4, 0.4);
+		discordSprite.scale.set(0.5, 0.5);
 		discordSprite.updateHitbox();
 		discordSprite.xAdd = 0;
 		discordSprite.yAdd = 100;
 		add(discordSprite);
 		add(discordSprite.fileText);
 
-		baldiBackSprite = new ExecutableSprite(520, 250, "baldiback", 'dawnassets/mainmenu/baldiback');
+		baldiBackSprite = new ExecutableSprite(530, 230, "baldiback", 'dawnassets/mainmenu/baldiback');
 		baldiBackSprite.scrollFactor.set(0, 0);
 		baldiBackSprite.antialiasing = ClientPrefs.globalAntialiasing;
-		baldiBackSprite.scale.set(0.2, 0.2);
+		baldiBackSprite.scale.set(0.17, 0.17);
 		baldiBackSprite.updateHitbox();
 		baldiBackSprite.xAdd = 10;
 		baldiBackSprite.yAdd = 150;
 		add(baldiBackSprite);
 		add(baldiBackSprite.fileText);
 
-		searchSprite = new ExecutableSprite(200, FlxG.height - 125, "search", 'dawnassets/mainmenu/search');
-		searchSprite.scrollFactor.set(0, 0);
-		searchSprite.antialiasing = ClientPrefs.globalAntialiasing;
-		searchSprite.scale.set(0.2, 0.2);
-		searchSprite.updateHitbox();
-		searchSprite.fileText.text = "";
-		add(searchSprite);
-		add(searchSprite.fileText);
-
-		uselessSprite = new ExecutableSprite(710, 250, "useless", 'dawnassets/mainmenu/useless');
+		uselessSprite = new ExecutableSprite(710, 230, "useless", 'dawnassets/mainmenu/useless');
 		uselessSprite.scrollFactor.set(0, 0);
 		uselessSprite.antialiasing = ClientPrefs.globalAntialiasing;
 		uselessSprite.scale.set(0.3, 0.3);
@@ -195,6 +190,8 @@ class DesktopState extends MusicBeatState
 		uselessSprite.yAdd = 120;
 		add(uselessSprite);
 		add(uselessSprite.fileText);
+
+		// 3RD ROW SPRITES
 
 		flappyBirdSprite = new ExecutableSprite(200, 400, "flappybird", 'dawnassets/mainmenu/bird');
 		flappyBirdSprite.scrollFactor.set(0, 0);
@@ -205,6 +202,19 @@ class DesktopState extends MusicBeatState
 		flappyBirdSprite.yAdd = 140;
 		add(flappyBirdSprite);
 		add(flappyBirdSprite.fileText);
+
+		// ?????
+
+		searchSprite = new ExecutableSprite(200, FlxG.height - 125, "search", 'dawnassets/mainmenu/search');
+		searchSprite.scrollFactor.set(0, 0);
+		searchSprite.antialiasing = ClientPrefs.globalAntialiasing;
+		searchSprite.scale.set(0.2, 0.2);
+		searchSprite.updateHitbox();
+		searchSprite.fileText.text = "";
+		add(searchSprite);
+		add(searchSprite.fileText);
+
+		// continue;
 
 		camFollow = new FlxObject(0, 0, 1, 1);
 		camFollowPos = new FlxObject(0, 0, 1, 1);
